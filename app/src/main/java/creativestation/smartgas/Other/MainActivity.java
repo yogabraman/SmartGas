@@ -1,4 +1,4 @@
-package creativestation.smartgas;
+package creativestation.smartgas.Other;
 
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -12,6 +12,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import creativestation.smartgas.R;
 
 public class MainActivity extends AppCompatActivity {
 

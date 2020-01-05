@@ -1,4 +1,4 @@
-package creativestation.smartgas;
+package creativestation.smartgas.Tips;
 
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import creativestation.smartgas.R;
 
 
 public class PemasanganFragment extends Fragment {

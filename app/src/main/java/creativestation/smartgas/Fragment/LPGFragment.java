@@ -1,8 +1,5 @@
-package creativestation.smartgas;
+package creativestation.smartgas.Fragment;
 
-
-import android.app.Notification;
-import android.app.NotificationManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -13,15 +10,14 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Toast;
-
 import com.github.anastr.speedviewlib.SpeedView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
 import creativestation.smartgas.Preferences.PrefManager;
+import creativestation.smartgas.R;
 
 
 public class LPGFragment extends Fragment {
@@ -42,6 +38,7 @@ public class LPGFragment extends Fragment {
         lpg = v.findViewById(R.id.btn_lpg);
         speedView = v.findViewById(R.id.speedView);
         loading = v.findViewById(R.id.loading);
+        loading.setVisibility(View.VISIBLE);
 
         database = FirebaseDatabase.getInstance();
         myRef = database.getReference();
@@ -49,9 +46,6 @@ public class LPGFragment extends Fragment {
 
         prefManager = new PrefManager(getContext());
         gaschild = prefManager.getAlat();
-//        gaschild = "smartgas1";
-        /*gaschild =  getActivity().getIntent().getStringExtra("child");*/
-        /*Toast.makeText(getActivity(), gaschild, Toast.LENGTH_SHORT).show();*/
         return v;
     }
 
@@ -60,6 +54,35 @@ public class LPGFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         getActivity().setTitle("LPG");
         final DatabaseReference LPG = SMART.child(gaschild).child("Regulator");
+        LPG.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                //check status
+                LPG.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        Integer value = dataSnapshot.child("value").getValue(Integer.class);
+                        speedView.speedPercentTo(value);
+                        loading.setVisibility(View.GONE);
+                        final String reg = dataSnapshot.child("status").getValue(String.class);
+                        if (reg.equals("0")) {
+                            lpg.setBackgroundResource(R.drawable.red_button);
+                        } else {
+                            lpg.setBackgroundResource(R.drawable.orange_button);
+                        }
+                    }
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+                    }
+                });
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+        //Click Button Lepas Regulator
         lpg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -88,35 +111,6 @@ public class LPGFragment extends Fragment {
                     public void onCancelled(@NonNull DatabaseError databaseError) {
                     }
                 });
-            }
-        });
-        LPG.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                //check status
-                LPG.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        loading.setVisibility(View.GONE);
-                        Integer value = dataSnapshot.child("value").getValue(Integer.class);
-                        speedView.speedPercentTo(value);
-
-                        final String reg = dataSnapshot.child("status").getValue(String.class);
-                        if (reg.equals("0")) {
-                            lpg.setBackgroundResource(R.drawable.red_button);
-                        } else {
-                            lpg.setBackgroundResource(R.drawable.orange_button);
-                        }
-                    }
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-                    }
-                });
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
             }
         });
     }

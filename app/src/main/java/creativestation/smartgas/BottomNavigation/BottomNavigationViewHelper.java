@@ -1,4 +1,4 @@
-package creativestation.smartgas;
+package creativestation.smartgas.BottomNavigation;
 
 import android.annotation.SuppressLint;
 import android.support.design.internal.BottomNavigationItemView;

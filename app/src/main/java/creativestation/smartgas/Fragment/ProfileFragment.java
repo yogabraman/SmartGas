@@ -1,4 +1,4 @@
-package creativestation.smartgas;
+package creativestation.smartgas.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -22,6 +22,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import creativestation.smartgas.Other.Notif;
+import creativestation.smartgas.R;
+import creativestation.smartgas.SettingActivity;
 
 
 public class ProfileFragment extends Fragment implements View.OnClickListener {

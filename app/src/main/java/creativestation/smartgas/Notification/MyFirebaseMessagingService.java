@@ -1,4 +1,4 @@
-package creativestation.smartgas;
+package creativestation.smartgas.Notification;
 
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -16,7 +16,9 @@ import com.google.firebase.messaging.RemoteMessage;
 
 import java.util.Map;
 
+import creativestation.smartgas.HomeActivity;
 import creativestation.smartgas.Preferences.PrefManager;
+import creativestation.smartgas.R;
 
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
     private static final int NOTIFICATION_ID_1 = 0;

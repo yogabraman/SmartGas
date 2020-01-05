@@ -1,4 +1,4 @@
-package creativestation.smartgas;
+package creativestation.smartgas.Fragment;
 
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -27,8 +27,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.messaging.FirebaseMessaging;
 
 import creativestation.smartgas.Preferences.PrefManager;
-
-
+import creativestation.smartgas.R;
 
 
 public class GasFragment extends Fragment {
@@ -49,6 +48,7 @@ public class GasFragment extends Fragment {
         kondisi=v.findViewById(R.id.txt_kondisi);
         tubeSpeedometer = v.findViewById(R.id.tubeSpeedometer);
         loading = v.findViewById(R.id.loading);
+        loading.setVisibility(View.VISIBLE);
 
         database = FirebaseDatabase.getInstance();
         myRef = database.getReference();
@@ -56,9 +56,6 @@ public class GasFragment extends Fragment {
 
         prefManager = new PrefManager(getContext());
         gaschild = prefManager.getAlat();
-        /*gaschild = "smartgas1";*/
-        /*gaschild =  getActivity().getIntent().getStringExtra("child");*/
-        /*Toast.makeText(getActivity(), gaschild, Toast.LENGTH_SHORT).show();*/
         return v;
     }
 
@@ -74,9 +71,9 @@ public class GasFragment extends Fragment {
                 GAS.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        loading.setVisibility(View.GONE);
                         Float value = dataSnapshot.child("kadar").getValue(Float.class);
                         tubeSpeedometer.speedTo(value);
+                        loading.setVisibility(View.GONE);
                         if (value < 2.5){
                             kondisi.setText("AMAN");
                             kondisi.setTextColor(Color.parseColor("#14d94c"));

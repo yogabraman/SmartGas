@@ -23,20 +23,15 @@
         <activity
             android:name=".PasswordActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".Notif" />
+        <activity android:name=".Other.Notif" />
 
-        <service android:name=".GettingDeviceTokenService">
-            <intent-filter>
-                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
-            </intent-filter>
-        </service>
-        <service android:name=".MyFirebaseMessagingService">
+        <service android:name=".Notification.MyFirebaseMessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
 
-        <activity android:name=".TipsActivity" />
+        <activity android:name=".Tips.TipsActivity" />
         <activity
             android:name=".SplashActivity"
             android:screenOrientation="portrait"
@@ -47,7 +42,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".Other.MainActivity" />
         <activity
             android:name=".HomeActivity"
             android:screenOrientation="portrait" />
