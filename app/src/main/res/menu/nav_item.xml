@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_profile"
+        android:icon="@drawable/ic_user"
+        android:title="Profile" />
+
+    <item
+        android:id="@+id/navigation_gas"
+        android:icon="@drawable/gas"
+        android:title="Kadar Gas" />
+
+    <item
+        android:id="@+id/navigation_lpg"
+        android:icon="@drawable/lpg"
+        android:title="LPG" />
+
+    <item
+        android:id="@+id/navigation_monitor"
+        android:icon="@drawable/monitor"
+        android:title="Grafik" />
+</menu>

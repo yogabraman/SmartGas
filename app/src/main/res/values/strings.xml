@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">SmartGas</string>
+
+    <string name="yes">YA</string>
+    <string name="no">TIDAK</string>
+    <string name="title">Penggunaan tidak wajar!!</string>
+
+    <string-array name="tahun">
+        <item>Tahun</item>
+        <item>2019</item>
+        <item>2020</item>
+        <item>2021</item>
+        <item>2022</item>
+        <item>2023</item>
+        <item>2024</item>
+    </string-array>
+
+    <string-array name="bulan">
+        <item>Bulan</item>
+        <item>Januari</item>
+        <item>Februari</item>
+        <item>Maret</item>
+        <item>April</item>
+        <item>Mei</item>
+        <item>Juni</item>
+        <item>Juli</item>
+        <item>Agustus</item>
+        <item>September</item>
+        <item>Oktober</item>
+        <item>November</item>
+        <item>Desember</item>
+    </string-array>
+
+    <string name="next">LANJUT</string>
+    <string name="skip">LEWATI</string>
+    <string name="start">MULAI</string>
+
+    <string name="slide_1_title">GAS PINTAR</string>
+    <string name="slide_1_desc">Live Smart with Gas Pintar</string>
+
+    <string name="slide_2_title">KADAR GAS</string>
+    <string name="slide_2_desc">Otomatisasi penanganan kebocoran gas\n &amp;\n monitor kadar gas dalam ruangan</string>
+
+    <string name="slide_3_title">LPG</string>
+    <string name="slide_3_desc">Monitor penggunaan gas lpg &amp; kendali regulator jarak jauh</string>
+
+    <string name="slide_4_title">PONSEL</string>
+    <string name="slide_4_desc">Kontrol dan Monitor\nSemuanya ada di ponselmu sekarang</string>
+    <string name="title_activity_tips">TipsActivity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="tab_text_3">Tab 3</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_grafik">Grafik</string>
+
+    <string name="SpeedPercent">1.8</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

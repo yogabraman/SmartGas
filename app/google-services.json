@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1042333726873",
+    "firebase_url": "https://smartgas-c28af.firebaseio.com",
+    "project_id": "smartgas-c28af",
+    "storage_bucket": "smartgas-c28af.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1042333726873:android:cf2e9aa288872d00",
+        "android_client_info": {
+          "package_name": "creativestation.smartgas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1042333726873-4p482ch7qt1pk3to5cv0ebpt40vud5qr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "creativestation.smartgas",
+            "certificate_hash": "c467e4ce86794e508e80fe640927d70b2dc7130c"
+          }
+        },
+        {
+          "client_id": "1042333726873-v3di8j4sesflr7n4b6gdvfhocckq861n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKK6RieqiuK1atv3dfag04YrorauiKx6A"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1042333726873-v3di8j4sesflr7n4b6gdvfhocckq861n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
